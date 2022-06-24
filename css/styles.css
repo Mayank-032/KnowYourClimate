@@ -1,0 +1,117 @@
+body{
+    margin: auto;
+    padding: auto;
+    color: rgb(227, 225, 225);
+}
+
+.cont{
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    position: relative;
+    text-align: center;
+    color: black;
+}
+
+.landing_img{
+    height: 50%;
+    width: 100%;
+    background-size: auto;
+}
+
+.cont_text{
+    position: absolute;
+    top: 48%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#text_para1{
+    margin-top: 35px;
+}
+
+#text_para2{
+    margin-bottom: 75px;
+}
+
+.button{
+    position: absolute;
+    top: 66%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.get_started{
+    border-radius: 15px;
+    padding: 0px 8px 0px 8px;
+    font-size: 20px;
+    transition: 1s;
+}
+
+.move_down{
+    margin-left: 20px;
+    border-radius: 15px;
+    padding: 0px 8px 0px 8px;
+    font-size: 20px;
+    transition: 1s;
+}
+
+.about{
+    margin-top: 20px;
+    padding: 30px 30px 0px 30px;
+}
+
+.quote{
+    background-color: #004d00;
+    color: rgb(227, 225, 225);
+}
+
+.quote_text{
+    padding: 40px 40px 40px 40px;
+}
+
+.our_services{
+    margin-top: 100px;
+    padding: 40px 40px 40px 40px;
+}
+
+.our_service_row{
+    margin-top: 40px;
+}
+
+.footer{
+    display: flex;
+    margin-top: 100px;
+    background-color: rgb(239, 238, 238);
+    padding: 10px 10px 10px 10px;
+}
+
+.quick_links{
+    margin-left: 6rem;
+    margin-right: 15rem;
+    color: black;
+}
+.quick_link_head{
+    color: #004d00;
+    margin-bottom: 30px;
+}
+
+
+.contact_us{
+    margin-left: 2rem;
+    margin-right: 15rem;
+    color: black;
+}
+.contact_us_head{
+    color: #004d00;
+}
+
+.map{
+    margin-left: 2rem;
+}
+.map_head{
+    color:#004d00;
+}
