@@ -62,3 +62,5 @@ async function updateMap(){
 }
 
 updateMap();
+
+alert("Zoom inside map, click on marker and get information for that country");

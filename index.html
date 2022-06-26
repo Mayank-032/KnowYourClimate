@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
 
     <title>KnowYourClimate: Climate Conditions, Weather Conditions</title>
 </head>
@@ -20,8 +22,8 @@
             <p id="text_para2">Also can know about reasons and solutions for climate changes</p>
         </div>
         <div class="button">
-            <button class="btn-outline-success get_started">Get Started</button>
-            <button class="btn-outline-secondary move_down">Move Down</button>
+            <button class="btn-outline-success get_started" onclick="location.href = './Tracker/tracker.html';">Get Started</button>
+            <button class="btn-outline-primary move_down"> <a href="#about_us" style="text-decoration: none; color: black;"> Know about us </a> </button>
         </div>
     </div>
 
@@ -33,16 +35,17 @@
             <h6>~ Gisele Bundchen</h6>
         </div>
     </div>
+    
 
     <div class="about">
         <div class="row">
             <div class="col-5" style="margin-top: 20px;">
-                <h4 style="color: #004d00;">Our Services</h4>
+                <h4 id="about_us" style="color: #004d00;">About Us</h4>
                 
                 <h1>Who are We?</h1>
                 <p>-> We provide track of climate and effect of greenhouse gases over each country information.</p>
                 <p>-> We provide weather information along with air pollution index of each country.</p>
-                <p>-> We as a small team wants complete user expectation.</p>
+                <p>-> We as a small team wants to complete user expectation.</p>
                 <p>-> This idea came to our mind because of growing concerns of global warming due to harmful effects of dangerous gases in atmosphere.</p>
                 <p>-> Thus we thought of providing one place solutionto everyone where they can find everything related to climate and weather forecase and many more features.</p>
             </div>
@@ -53,8 +56,10 @@
         </div>
     </div>
 
+    <hr>
+
     <div class="our_services">
-        <h4 style="color: #004d00;">Our Services</h4>
+        <h4 id="service" style="color: #004d00;">Our Services</h4>
         <h1>What we provide?</h1>
         
         <div class="row our_service_row">
@@ -90,12 +95,14 @@
         </div>
     </div>
 
+    <hr>
+
     <div class="footer">
         <div class="quick_links">
             <h2 class="quick_link_head"> Quick Links </h1>
-            <h5 style="margin-right: 20px;">Home</h5>
-            <h5 style="margin-right: 20px;">About Us</h5>
-            <h5 style="margin-right: 20px;">Services</h3>
+            <h5 style="margin-right: 20px;"> <a href="#text_head" style="text-decoration: none; color: black;"> Home </a> </h5>
+            <h5 style="margin-right: 20px;"> <a href="#about_us" style="text-decoration: none; color: black;"> About Us </a> </h5>
+            <h5 style="margin-right: 20px;"> <a href="#service" style="text-decoration: none; color: black;"> Services </a> </h5>
         </div>
 
         <div class="contact_us">
@@ -120,11 +127,13 @@
         </div>
 
         <div class="map">
-            <h2 class="map_head"> Maps </h2>
+            <h2 class="map_head" style="margin-left: 40px;"> Maps </h2>
+            <div id="maps"></div>
         </div>
     
     </div>
 
+    <script src="./js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
