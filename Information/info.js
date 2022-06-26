@@ -45,7 +45,7 @@ function getLocation(){
     let lat = coordinates.latitude;
     let lon = coordinates.longitude;
 
-    fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=bbd672373a57758125b5a2c935617694`)
+    fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=3d8d65f6517ab14afb2e5fed4aac4541`)
         .then(response => response.json())
         .then(data => {
             console.log(data);
@@ -61,7 +61,7 @@ function getInfo(){
     let lon = coordinates.longitude;
 
     
-    fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=bbd672373a57758125b5a2c935617694`)
+    fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=3d8d65f6517ab14afb2e5fed4aac4541`)
         .then(response => response.json())
         .then(data => {
             // console.log(data);
