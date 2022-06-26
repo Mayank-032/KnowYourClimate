@@ -22,14 +22,21 @@
         mapboxgl.accessToken = 'pk.eyJ1IjoibWF5YW5rMjAwMiIsImEiOiJjbDR0ZXNma3QwcGMxM3BvNjcxcHAzNG1lIn0.aF8_qn6O-OXr7yWSG7llZw';
         var map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/dark-v10', 
+            style: 'mapbox://styles/mapbox/dark-v10',
             center: [0, 20],
             zoom: 2
         });
 
         map.on('load', function(){
             map.on('click', (e) => {
-                console.log(e);
+                const coord_obj = {};
+                coord_obj.latitude = e.lngLat.lat;
+                coord_obj.longitude = e.lngLat.lng; 
+
+                const coord_obj_str = JSON.stringify(coord_obj);
+                localStorage.setItem('coordinates_obj', coord_obj_str);
+
+                location.href = "../Information/info.html";
             });
         })
     </script>

@@ -22,7 +22,7 @@ async function updateMap(){
         let lat = obj.latitude;
         let lon = obj.longitude;
         
-        fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=dbeab08189d029bd242d88c71ed4f00d`)
+        fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=bbd672373a57758125b5a2c935617694`)
             .then(response => response.json())
             .then(data => {
                 // console.log(data);
@@ -57,11 +57,6 @@ async function updateMap(){
                 marker
                     .setLngLat([lon,lat])
                     .addTo(map);
-
-                const popup = new mapboxgl.Popup({
-                    closeButton: false,
-                    closeOnClick: false
-                });
             });
     })
 }
