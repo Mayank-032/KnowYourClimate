@@ -1,17 +1,21 @@
-function extractCoordinates(){
-    const coord_obj_str = localStorage.getItem('coordinates_obj');
-    const coord_obj = JSON.parse(coord_obj_str);
+let SearchBarCityName = document.getElementById("exampleInputCityName");
+console.log(SearchBarCityName.value);
 
-    // coord_obj = {
-    //     "latitude": coord_obj.latitude,
-    //     "longitude": coord_obj.longitude
-    // }
+function SearchBarAPI(){
+    let CityName = SearchBarCityName.value;
+    fetch('http://api.openweathermap.org/geo/1.0/direct?q='+CityName+'&limit=5&appid=bbd672373a57758125b5a2c935617694')
+        .then(response => response.json())
+        .then(data => DisplayCityNameUsingUsingSearchBar(data))
 
-    return coord_obj;
+    .catch(err => console.log(err));
 }
 
-let coordinates = extractCoordinates();
-console.log(coordinates);
+function DisplayCityNameUsingUsingSearchBar(data){    
+    let latitude = data[0].lat;
+    let longitude = data[0].lon;
+
+    getLocation(latitude, longitude);
+}
 
 let gas1 = document.querySelectorAll("#gas1");
 let gas1_d = document.getElementById("gas1_data");
@@ -41,9 +45,8 @@ let aqi = document.getElementById("aqi");
 let country = document.querySelectorAll("#country");
 let description = document.getElementById("description");
 
-function getLocation(){
-    let lat = coordinates.latitude;
-    let lon = coordinates.longitude;
+function getLocation(lat, lon){
+    
 
     fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=3d8d65f6517ab14afb2e5fed4aac4541`)
         .then(response => response.json())
@@ -51,16 +54,26 @@ function getLocation(){
             console.log(data);
             country[0].innerHTML = data[0].name;
             country[1].innerHTML = data[0].name;
+
+            getInfo(lat, lon);
         })
 }
 
-getLocation();
+function extractCoordinates(){
+    const coord_obj_str = localStorage.getItem('coordinates_obj');
+    const coord_obj = JSON.parse(coord_obj_str);
 
-function getInfo(){
-    let lat = coordinates.latitude;
-    let lon = coordinates.longitude;
+    let lat = coord_obj.latitude;
+    let lon = coord_obj.longitude;
 
-    
+    getLocation(lat, lon);
+}
+
+if(SearchBarCityName.value === ""){
+    extractCoordinates();
+}
+
+function getInfo(lat, lon){
     fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=3d8d65f6517ab14afb2e5fed4aac4541`)
         .then(response => response.json())
         .then(data => {
@@ -124,6 +137,4 @@ function getInfo(){
         });
 }
 
-getInfo();
-
-alert("Here You will get further Information!! To search more GO Back :)");
+alert("This information is for selected one. You can also try by typing any city name in search bar!! Please type city name correctly :)");

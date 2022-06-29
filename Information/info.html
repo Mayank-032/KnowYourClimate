@@ -12,8 +12,29 @@
     <title> Your Country's Climate </title>
 </head>
 <body>
+    <section id="SearchBox" >
+        <div class="search-heading">
+            <h1 id="heading1">Search For Any City</h1>
+        </div>
+
+        <form id="search-bar" action="#">
+            <div class="form-group">
+                <div class="row">
+                    <div>
+                        <center><input type="search" id="exampleInputCityName" class="form-control" placeholder="Search Here..."></center>
+                    </div>
+
+                    <div>
+                        <button onclick="SearchBarAPI()" id="search-button" class="btn">Search</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </form>
+    </section>
+
     <div class="container">
-        <div class="heading"><span id="country">Country</span>'s Climate Information</div>
+        <div class="heading"><span id="country">Country</span>'s Climate Report</div>
 
         <div class="composition">
             <div class="air_quality">
